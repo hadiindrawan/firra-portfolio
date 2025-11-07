@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Firra Citra Ayu Rohimat - BNSP-Certified Professional Trainer and L&D Specialist with 3+ years experience in people development and career guidance.">
+    <meta name="keywords" content="Professional Trainer, L&D Specialist, Career Development, People Development, BNSP Certified, Training Consultant">
+    <meta name="author" content="Firra Citra Ayu Rohimat">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Firra Citra Ayu Rohimat - Professional Trainer & L&D Specialist">
+    <meta property="og:description" content="BNSP-Certified Professional Trainer with 3+ years experience in people development and strategic career guidance.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="./assets/profile-photo.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Firra Citra Ayu Rohimat - Professional Trainer & L&D Specialist">
+    <meta name="twitter:description" content="BNSP-Certified Professional Trainer with 3+ years experience in people development and strategic career guidance.">
+    <meta name="twitter:image" content="./assets/profile-photo.jpg">
+    
+    <title>Firra Citra Ayu Rohimat - Professional Trainer & L&D Specialist</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    <link rel="alternate icon" href="./assets/favicon.svg">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'soft-blue': {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-soft-blue-700">Firra Citra</h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-gray-700 hover:text-soft-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
+                        <a href="#about" class="text-gray-700 hover:text-soft-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
+                        <a href="#services" class="text-gray-700 hover:text-soft-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Services</a>
+                        <a href="#experience" class="text-gray-700 hover:text-soft-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Experience</a>
+                        <a href="#contact" class="bg-soft-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-soft-blue-700 transition duration-300">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="mobile-menu-btn text-gray-700 hover:text-soft-blue-600 focus:outline-none focus:text-soft-blue-600" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div class="md:hidden mobile-menu hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="#home" class="text-gray-700 hover:text-soft-blue-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-soft-blue-600 block px-3 py-2 rounded-md text-base font-medium">About</a>
+                    <a href="#services" class="text-gray-700 hover:text-soft-blue-600 block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                    <a href="#experience" class="text-gray-700 hover:text-soft-blue-600 block px-3 py-2 rounded-md text-base font-medium">Experience</a>
+                    <a href="#contact" class="bg-soft-blue-600 text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-soft-blue-700">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-20 bg-gradient-to-br from-soft-blue-50 to-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+                <div class="lg:col-span-7">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                        Hi, I'm <span class="text-soft-blue-600">Firra Citra</span>
+                        <br>Ayu Rohimat
+                    </h1>
+                    <p class="mt-6 text-xl text-gray-600 max-w-3xl">
+                        BNSP-Certified Professional Trainer and L&D Specialist with over 3 years of experience in people development strategies and career counseling.
+                    </p>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Ready to guide you in creating a career direction that aligns with industry demands through strategic insights and measurable impact.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-soft-blue-600 hover:bg-soft-blue-700 transition duration-300">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Get In Touch
+                        </a>
+                        <a href="#services" class="inline-flex items-center px-6 py-3 border border-soft-blue-600 text-base font-medium rounded-md text-soft-blue-600 bg-white hover:bg-soft-blue-50 transition duration-300">
+                            <i class="fas fa-briefcase mr-2"></i>
+                            View Services
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-12 lg:mt-0 lg:col-span-5">
+                    <div class="profile-photo-container relative flex justify-center">
+                        <!-- Decorative background elements -->
+                        <div class="absolute -top-4 -left-4 w-32 h-32 bg-soft-blue-200 rounded-full opacity-20 animate-pulse"></div>
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-soft-blue-300 rounded-full opacity-30 animate-pulse" style="animation-delay: 1s;"></div>
+                        
+                        <!-- Main photo container -->
+                        <div class="relative w-80 h-96 bg-gradient-to-br from-soft-blue-100 to-soft-blue-200 rounded-3xl shadow-2xl overflow-hidden border-4 border-white">
+                            <!-- Photo as background -->
+                            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+                                 style="background-image: url('./assets/firra.png');">
+                            </div>
+                            
+                            <!-- Gradient overlay for better text contrast if needed -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">About Me</h2>
+                <p class="mt-4 text-xl text-gray-600">Passionate about developing people and transforming careers</p>
+            </div>
+            
+            <div class="mt-16">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-20 items-center max-w-7xl mx-auto">
+                    
+                    <!-- Statistics Section - Left Side -->
+                    <div class="lg:col-span-4 mb-12 lg:mb-0">
+                        <div class="space-y-6">
+                            <div class="text-center lg:text-left mb-8">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">By the Numbers</h3>
+                                <p class="text-gray-600">Proven track record of success</p>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="p-6 bg-gradient-to-br from-soft-blue-50 to-soft-blue-100 rounded-xl border border-soft-blue-200">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-soft-blue-600 rounded-full flex items-center justify-center mr-4">
+                                            <i class="fas fa-medal text-white"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-2xl font-bold text-soft-blue-600">3+</div>
+                                            <div class="text-sm font-medium text-gray-700">Years Experience</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="p-6 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl border border-emerald-200">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center mr-4">
+                                            <i class="fas fa-certificate text-white"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-2xl font-bold text-emerald-600">BNSP</div>
+                                            <div class="text-sm font-medium text-gray-700">Certified Trainer</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl border border-purple-200">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mr-4">
+                                            <i class="fas fa-users text-white"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-lg font-bold text-purple-600">Multiple</div>
+                                            <div class="text-sm font-medium text-gray-700">Mentoring Services Delivered</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Header and Content Section - Right Side -->
+                    <div class="lg:col-span-8">
+                        <!-- Header Section -->
+                        <div class="mb-8">
+                            <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 text-center lg:text-left">
+                                Transforming Careers Through Strategic Development
+                            </h3>
+                            <p class="text-xl text-soft-blue-600 font-medium text-center lg:text-left">
+                                Empowering professionals with strategic insights and proven methodologies
+                            </p>
+                        </div>
+                        
+                        <!-- Content Section -->
+                        <div class="space-y-6">
+                            <p class="text-gray-700 text-lg leading-relaxed">
+                                As a <strong class="text-soft-blue-600">BNSP-Certified Professional Trainer</strong> and Learning & Development Specialist, I bring over 3 years of proven experience in creating impactful people development strategies. My deep expertise in counseling and career guidance has helped countless professionals navigate their career paths successfully.
+                            </p>
+                            
+                            <p class="text-gray-700 text-lg leading-relaxed">
+                                I specialize in turning strategic insights into clear, measurable, and impactful career roadmaps that align with current industry demands. My approach combines <em class="text-soft-blue-600">theoretical knowledge with practical application</em>, ensuring sustainable growth and development.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mission Statement - Full Width -->
+                
+                <!-- Mission Statement -->
+                <div class="text-center mt-20">
+                    <blockquote class="text-2xl lg:text-3xl text-gray-700 font-medium italic mb-6 max-w-4xl mx-auto">
+                        "My mission is to bridge the gap between potential and performance, turning career aspirations into achievable realities."
+                    </blockquote>
+                    <div class="flex items-center justify-center space-x-3 text-soft-blue-600">
+                        <div class="w-12 h-0.5 bg-soft-blue-300"></div>
+                        <span class="text-base font-semibold">Firra Citra Ayu Rohimat</span>
+                        <div class="w-12 h-0.5 bg-soft-blue-300"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">My Services</h2>
+                <p class="mt-4 text-xl text-gray-600">Comprehensive solutions for your professional development needs</p>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-soft-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-chalkboard-teacher text-soft-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Professional Training</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive training programs designed to enhance professional skills and competencies aligned with industry standards.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Leadership Development</li>
+                        <li>• Communication Skills</li>
+                        <li>• Team Building</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-soft-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-compass text-soft-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Career Counseling</h3>
+                    <p class="text-gray-600 mb-4">Personalized career guidance to help you navigate professional challenges and identify growth opportunities.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Career Path Planning</li>
+                        <li>• Skill Gap Analysis</li>
+                        <li>• Goal Setting & Strategy</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-soft-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-soft-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">L&D Strategy</h3>
+                    <p class="text-gray-600 mb-4">Strategic learning and development solutions to build organizational capabilities and drive business results.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Learning Strategy Design</li>
+                        <li>• Capability Assessment</li>
+                        <li>• Performance Improvement</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-soft-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-soft-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Skills Development</h3>
+                    <p class="text-gray-600 mb-4">Targeted skill enhancement programs to meet current and future industry demands and technological changes.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Technical Skills Training</li>
+                        <li>• Soft Skills Enhancement</li>
+                        <li>• Digital Literacy</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-soft-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-lightbulb text-soft-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Workshop Facilitation</h3>
+                    <p class="text-gray-600 mb-4">Interactive workshops and seminars designed to engage participants and deliver practical, actionable insights.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Interactive Sessions</li>
+                        <li>• Team Workshops</li>
+                        <li>• Custom Programs</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-soft-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-handshake text-soft-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Consultation</h3>
+                    <p class="text-gray-600 mb-4">Strategic consultation services to help organizations build effective learning cultures and development frameworks.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Organizational Analysis</li>
+                        <li>• Strategic Planning</li>
+                        <li>• Implementation Support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Experience & Expertise</h2>
+                <p class="mt-4 text-xl text-gray-600">Building careers through proven methodologies and strategic insights</p>
+            </div>
+            
+            <div class="mt-16">
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-soft-blue-200 transform md:-translate-x-0.5"></div>
+                    
+                    <!-- Experience Items -->
+                    <div class="space-y-12">
+                        <!-- Experience 1 -->
+                        <div class="relative flex items-center">
+                            <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-soft-blue-600 rounded-full transform md:-translate-x-4 flex items-center justify-center">
+                                <i class="fas fa-star text-white text-sm"></i>
+                            </div>
+                            <div class="ml-12 md:ml-0 md:w-1/2 md:pr-8 md:text-right">
+                                <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-soft-blue-500">
+                                    <h3 class="text-xl font-semibold text-gray-900">BNSP Certification Achievement</h3>
+                                    <p class="text-soft-blue-600 font-medium">Professional Trainer Certification</p>
+                                    <p class="mt-2 text-gray-600">Achieved BNSP (Badan Nasional Sertifikasi Profesi) certification, demonstrating mastery of professional training competencies and adherence to national standards.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Experience 2 -->
+                        <div class="relative flex items-center md:justify-end">
+                            <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-soft-blue-600 rounded-full transform md:-translate-x-4 flex items-center justify-center">
+                                <i class="fas fa-users text-white text-sm"></i>
+                            </div>
+                            <div class="ml-12 md:ml-0 md:w-1/2 md:pl-8">
+                                <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-soft-blue-500">
+                                    <h3 class="text-xl font-semibold text-gray-900">L&D Specialist Experience</h3>
+                                    <p class="text-soft-blue-600 font-medium">3+ Years of Impact</p>
+                                    <p class="mt-2 text-gray-600">Developed and implemented comprehensive learning and development strategies, resulting in measurable improvements in employee performance and career progression.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Experience 3 -->
+                        <div class="relative flex items-center">
+                            <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-soft-blue-600 rounded-full transform md:-translate-x-4 flex items-center justify-center">
+                                <i class="fas fa-chart-line text-white text-sm"></i>
+                            </div>
+                            <div class="ml-12 md:ml-0 md:w-1/2 md:pr-8 md:text-right">
+                                <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-soft-blue-500">
+                                    <h3 class="text-xl font-semibold text-gray-900">Strategic Career Counseling</h3>
+                                    <p class="text-soft-blue-600 font-medium">Proven Methodologies</p>
+                                    <p class="mt-2 text-gray-600">Successfully guided numerous professionals through strategic career transitions, utilizing deep counseling expertise and industry insights to create actionable career roadmaps.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skills Section -->
+            <div class="mt-20">
+                <h3 class="text-2xl font-bold text-center text-gray-900 mb-12">Core Competencies</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center p-4 bg-soft-blue-50 rounded-lg">
+                        <i class="fas fa-brain text-3xl text-soft-blue-600 mb-2"></i>
+                        <h4 class="font-semibold text-gray-800">Strategic Thinking</h4>
+                    </div>
+                    <div class="text-center p-4 bg-soft-blue-50 rounded-lg">
+                        <i class="fas fa-comments text-3xl text-soft-blue-600 mb-2"></i>
+                        <h4 class="font-semibold text-gray-800">Counseling</h4>
+                    </div>
+                    <div class="text-center p-4 bg-soft-blue-50 rounded-lg">
+                        <i class="fas fa-graduation-cap text-3xl text-soft-blue-600 mb-2"></i>
+                        <h4 class="font-semibold text-gray-800">Training Design</h4>
+                    </div>
+                    <div class="text-center p-4 bg-soft-blue-50 rounded-lg">
+                        <i class="fas fa-chart-bar text-3xl text-soft-blue-600 mb-2"></i>
+                        <h4 class="font-semibold text-gray-800">Goal Achievement</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-soft-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Let's Build Your Career Together</h2>
+                <p class="mt-4 text-xl text-gray-600">Ready to transform your professional journey? Let's create your strategic career roadmap.</p>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Get In Touch</h3>
+                    <p class="text-gray-600 mb-8">
+                        I'm here to help you navigate your career journey with strategic insights and proven methodologies. 
+                        Whether you're looking for professional training, career counseling, or organizational development solutions, 
+                        let's discuss how we can achieve your goals together.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-soft-blue-600 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-900">Email</p>
+                                <p class="text-gray-600">firra.citra@email.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-soft-blue-600 rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-linkedin text-white"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-900">LinkedIn</p>
+                                <p class="text-gray-600">firra-citra-ayu-rohimat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dealls Mentor Card -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <!-- Header -->
+                    <div class="bg-gradient-to-r from-soft-blue-500 to-soft-blue-600 p-6 text-white">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold">Professional Mentor</h3>
+                                <p class="text-soft-blue-100 mt-1">Available on Dealls Platform</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="bg-white bg-opacity-20 rounded-full px-3 py-1">
+                                    <span class="text-sm font-semibold">⭐ 100% Rate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Statistics Grid -->
+                    <div class="p-6">
+                        <!-- Expertise Topics -->
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-gray-900 mb-3">🎯 Mentoring Expertise</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-soft-blue-100 text-soft-blue-700 text-sm rounded-full">Career Planning</span>
+                                <span class="px-3 py-1 bg-soft-blue-100 text-soft-blue-700 text-sm rounded-full">Communication Skills</span>
+                                <span class="px-3 py-1 bg-soft-blue-100 text-soft-blue-700 text-sm rounded-full">Goal Setting</span>
+                                <span class="px-3 py-1 bg-soft-blue-100 text-soft-blue-700 text-sm rounded-full">CV Making</span>
+                                <span class="px-3 py-1 bg-soft-blue-100 text-soft-blue-700 text-sm rounded-full">Interview Prep</span>
+                                <span class="px-3 py-1 bg-soft-blue-100 text-soft-blue-700 text-sm rounded-full">Personal Development</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Special Note -->
+                        <div class="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-4 mb-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-rocket text-green-600 mt-0.5 mr-2"></i>
+                                <div>
+                                    <p class="text-sm text-green-800">
+                                        <span class="font-semibold">Ready to Transform Your Career?</span> Join my mentoring program and unlock your potential with personalized guidance, proven strategies, and actionable insights that will accelerate your professional growth!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="space-y-3">
+                            <a href="https://dealls.com/mentoring/firra-citra-ayu-rohimat-721" 
+                               target="_blank" 
+                               class="w-full bg-soft-blue-600 text-white py-3 px-4 rounded-md hover:bg-soft-blue-700 focus:outline-none focus:ring-2 focus:ring-soft-blue-500 focus:ring-offset-2 transition duration-300 inline-flex items-center justify-center">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Book Mentoring Session on Dealls
+                            </a>
+                        </div>
+                        
+                        <!-- Dealls Platform Info -->
+                        <div class="mt-6 pt-4 border-t border-gray-200">
+                            <div class="flex items-center justify-center text-sm text-gray-500">
+                                <img src="https://dealls.com/favicon.ico" alt="Dealls" class="w-4 h-4 mr-2">
+                                <span>Verified Mentor on Dealls Platform</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Firra Citra Ayu Rohimat</h3>
+                    <p class="text-gray-300 mb-4">
+                        BNSP-Certified Professional Trainer and L&D Specialist dedicated to transforming careers through strategic development and proven methodologies.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#home" class="hover:text-soft-blue-400 transition duration-300">Home</a></li>
+                        <li><a href="#about" class="hover:text-soft-blue-400 transition duration-300">About</a></li>
+                        <li><a href="#services" class="hover:text-soft-blue-400 transition duration-300">Services</a></li>
+                        <li><a href="#experience" class="hover:text-soft-blue-400 transition duration-300">Experience</a></li>
+                        <li><a href="#contact" class="hover:text-soft-blue-400 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Professional Training</li>
+                        <li>Career Counseling</li>
+                        <li>L&D Strategy</li>
+                        <li>Skills Development</li>
+                        <li>Workshop Facilitation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">
+                    © 2025 Firra Citra Ayu Rohimat. All rights reserved. | 
+                    <span class="text-soft-blue-400">Building careers, transforming futures.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./js/script.js"></script>
+</body>
+</html>

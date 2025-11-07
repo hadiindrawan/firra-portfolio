@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const parallaxElements = heroSection.querySelectorAll('.relative:not(.profile-photo-container)');
         
         parallaxElements.forEach(el => {
-            const speed = 0.2;
+            const speed = 0.1;
             el.style.transform = `translateY(${scrolled * speed}px)`;
         });
     }

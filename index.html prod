@@ -231,9 +231,8 @@
             <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
                 <div class="lg:col-span-7">
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                        <span class="block mb-4">Hi, I'm</span>
                         <span class="text-soft-blue-600">Firra Citra Ayu Rohimat</span>
-                        <!-- <br><span class="text-3xl sm:text-4xl lg:text-5xl">BNSP-Certified Professional Trainer & L&D Specialist</span> -->
+                        <br><span class="text-3xl sm:text-4xl lg:text-5xl">BNSP-Certified Professional Trainer & L&D Specialist</span>
                     </h1>
                     <p class="mt-6 text-xl text-gray-600 max-w-3xl">
                         <strong>BNSP-Certified Professional Trainer and Learning & Development Specialist</strong> with over 3 years of proven experience in people development strategies, career counseling, and corporate training programs across Indonesia.

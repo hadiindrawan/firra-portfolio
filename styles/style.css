@@ -1,20 +1,31 @@
-/* Custom CSS for Firra's Portfolio */
+/* Portfolio Custom Styles - Optimized for Performance */
 
-/* Smooth scrolling */
+/* Critical path optimizations */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling with reduced motion respect */
 html {
     scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 /* Custom animations */
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    0%, 100% { transform: translate3d(0, 0px, 0); }
+    50% { transform: translate3d(0, -20px, 0); }
 }
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translate3d(0, 30px, 0);
     }
     to {
         opacity: 1;
@@ -410,6 +421,189 @@ section {
 .profile-photo-container > div:last-child:hover {
     transform: scale(1.02);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+
+/* Image optimization */
+img {
+    max-width: 100%;
+    height: auto;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 0.75rem;
+}
+
+/* Lazy loading placeholder */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+/* Carousel specific optimizations */
+.carousel-slide {
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Performance-optimized animations */
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+    will-change: transform, opacity;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Modal optimizations */
+#imageModal {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: opacity 0.2s ease;
+    will-change: opacity;
+}
+
+#imageModal .relative {
+    transition: transform 0.2s ease;
+    will-change: transform;
+}
+
+/* Loading states */
+.image-loader {
+    transition: opacity 0.3s ease;
+    background: linear-gradient(90deg, 
+        rgba(147, 197, 253, 0.1) 0%, 
+        rgba(147, 197, 253, 0.3) 50%, 
+        rgba(147, 197, 253, 0.1) 100%);
+    background-size: 200px 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+/* Notification system */
+#notification-container {
+    pointer-events: none;
+    z-index: 9999;
+}
+
+#notification-container > div {
+    pointer-events: auto;
+    will-change: transform;
+}
+
+/* Accessibility improvements */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.focus\:not-sr-only:focus {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    padding: inherit !important;
+    margin: inherit !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .bg-soft-blue-50 {
+        background-color: #ffffff !important;
+    }
+    
+    .text-gray-600 {
+        color: #000000 !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .carousel-slide {
+        transform: none !important;
+    }
+}
+
+/* Focus management */
+:focus-visible {
+    outline: 2px solid #0ea5e9;
+    outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #0ea5e9;
+    outline-offset: 2px;
+}
+
+/* Image aspect ratios */
+.aspect-video {
+    aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+    aspect-ratio: 1 / 1;
+}
+
+/* Responsive images */
+.responsive-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Touch-friendly interactive elements */
+@media (pointer: coarse) {
+    button, .btn, .carousel-dot {
+        min-height: 44px;
+        min-width: 44px;
+    }
 }
 
 /* Badge styling */

@@ -374,7 +374,6 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('load', function() {
             setTimeout(() => {
                 const perfData = performance.getEntriesByType('navigation')[0];
-                console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
             }, 0);
         });
     }
@@ -392,5 +391,196 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    console.log('Portfolio JavaScript initialized successfully!');
+    // Speaking Events Data & Functionality
+    // Use centralized events data from global variable
+    const eventsData = window.SPEAKING_EVENTS_DATA || [
+        // Fallback data if events.js fails to load
+        {
+            id: 1,
+            image: './assets/web-firra-1.jpeg',
+            title: 'Create Your Interview Moment and Impress the Recruiter',
+            description: 'Delivered an engaging session on interview preparation strategies and techniques.',
+            date: 'Saturday, September 1, 2022',
+            organizer: 'careernetwork.id',
+            role: 'Speaker',
+            roleIcon: 'fas fa-microphone',
+            year: '2022',
+            themeColors: {
+                gradient: 'from-soft-blue-100 to-soft-blue-200',
+                badge: 'bg-soft-blue-600',
+                role: 'text-soft-blue-600',
+                tags: 'bg-soft-blue-100 text-soft-blue-700'
+            },
+            tags: ['Interview Skills', 'Career Development', 'Job Search']
+        }
+    ];
+
+    // Image Modal Elements
+    const imageModal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDate = document.getElementById('modalDate');
+    const modalOrganizer = document.getElementById('modalOrganizer');
+    const closeModal = document.getElementById('closeModal');
+
+    // Events Rendering and Management
+    let showAllEvents = false;
+    const eventsToShow = 3; // Initial number of events to show
+    
+    // Function to create event card HTML
+    function createEventCard(event) {
+        const tagsHTML = event.tags.map(tag => 
+            `<span class="px-2 py-1 ${event.themeColors.tags} text-xs rounded-full">${tag}</span>`
+        ).join('');
+        
+        return `
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-2 group" data-event-id="${event.id}">
+                <!-- Event Image -->
+                <div class="h-48 bg-gradient-to-br ${event.themeColors.gradient} relative overflow-hidden cursor-pointer speaking-event-image" data-event-id="${event.id}">
+                    <img src="${event.image}" alt="${event.title}" class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110">
+                    <!-- Hover Overlay -->
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                            <i class="fas fa-search-plus text-2xl mb-2"></i>
+                            <p class="text-sm font-medium">View Full Image</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-4 left-4 ${event.themeColors.badge} text-white px-3 py-1 rounded-full text-sm font-medium z-10">
+                        ${event.year}
+                    </div>
+                </div>
+                
+                <!-- Event Content -->
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i class="${event.roleIcon} ${event.themeColors.role} mr-2"></i>
+                        <span class="${event.themeColors.role} font-semibold text-sm uppercase tracking-wide">${event.role}</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">${event.title}</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                        ${event.description}
+                    </p>
+                    
+                    <!-- Event Details -->
+                    <div class="space-y-2 text-sm text-gray-500">
+                        <div class="flex items-center">
+                            <i class="fas fa-calendar-alt w-4 mr-2"></i>
+                            <span>${event.date}</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-building w-4 mr-2"></i>
+                            <span>${event.organizer}</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Topic Tags -->
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        ${tagsHTML}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // Function to render events
+    function renderEvents() {
+        const container = document.getElementById('eventsContainer');
+        const showMoreBtn = document.getElementById('showMoreEventsBtn');
+        
+        if (!container) return;
+        
+        const eventsToRender = showAllEvents ? eventsData : eventsData.slice(0, eventsToShow);
+        
+        container.innerHTML = eventsToRender.map(event => createEventCard(event)).join('');
+        
+        // Show/hide the "Show More" button
+        if (eventsData.length > eventsToShow) {
+            showMoreBtn.classList.remove('hidden');
+            
+            const btnText = showMoreBtn.querySelector('.btn-text');
+            const btnIcon = showMoreBtn.querySelector('i');
+            
+            if (showAllEvents) {
+                btnText.textContent = 'Show Less Events';
+                btnIcon.className = 'fas fa-chevron-up mr-2';
+            } else {
+                btnText.textContent = `Show More Events (${eventsData.length - eventsToShow} more)`;
+                btnIcon.className = 'fas fa-chevron-down mr-2';
+            }
+        } else {
+            showMoreBtn.classList.add('hidden');
+        }
+        
+        // Re-attach event listeners after rendering
+        attachEventListeners();
+    }
+    
+    // Function to attach event listeners
+    function attachEventListeners() {
+        // Add click event to all event images for modal
+        const eventImages = document.querySelectorAll('.speaking-event-image');
+        eventImages.forEach(imageContainer => {
+            imageContainer.addEventListener('click', function() {
+                const eventId = parseInt(this.dataset.eventId);
+                const event = eventsData.find(e => e.id === eventId);
+                
+                if (event && imageModal) {
+                    const img = this.querySelector('img');
+                    modalImage.src = img.src;
+                    modalImage.alt = img.alt;
+                    modalTitle.textContent = event.title;
+                    modalDate.textContent = event.date;
+                    modalOrganizer.textContent = `Organized by: ${event.organizer}`;
+                    
+                    imageModal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+    }
+    
+    // Show More/Less button functionality
+    const showMoreBtn = document.getElementById('showMoreEventsBtn');
+    if (showMoreBtn) {
+        showMoreBtn.addEventListener('click', function() {
+            showAllEvents = !showAllEvents;
+            renderEvents();
+            
+            // Smooth scroll to events section when showing more
+            if (showAllEvents) {
+                const eventsSection = document.getElementById('speaking');
+                if (eventsSection) {
+                    eventsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    }
+    
+    // Initial render of events
+    renderEvents();
+    
+    // Image Modal functionality
+    if (imageModal && closeModal) {
+        // Close modal functionality
+        function closeImageModalFunction() {
+            imageModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        closeModal.addEventListener('click', closeImageModalFunction);
+        
+        // Close modal when clicking outside the image
+        imageModal.addEventListener('click', function(e) {
+            if (e.target === imageModal) {
+                closeImageModalFunction();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !imageModal.classList.contains('hidden')) {
+                closeImageModalFunction();
+            }
+        });
+    }
 });

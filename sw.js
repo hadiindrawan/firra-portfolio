@@ -20,7 +20,7 @@ const urlsToCache = [
     '/assets/mentor-firra-2.jpeg',
     '/assets/mentor-firra-3.jpeg',
     '/assets/mentor-firra-4.jpeg',
-    '/assets/mentor-firra-5.jpeg',
+    '/assets/mentor-firra-7.jpeg',
     '/assets/web-firra-1.jpeg',
     '/assets/web-firra-2.jpeg',
     '/assets/web-firra-3.jpeg',

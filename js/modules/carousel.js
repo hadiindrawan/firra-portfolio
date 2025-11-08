@@ -4,7 +4,8 @@ class MentoringCarousel {
     constructor() {
         this.currentIndex = 0;
         this.autoplayInterval = null;
-        this.autoplayDelay = 3000; // 5 seconds
+        this.timerInterval = null;
+        this.autoplayDelay = 5000; // 5 seconds
         this.isAutoplayPaused = false;
         
         // Use centralized mentoring data from global variable
@@ -57,7 +58,7 @@ class MentoringCarousel {
 
         const slidesHTML = this.mentoringData.map((item, index) => `
             <div class="carousel-slide min-w-full relative">
-                <div class="h-96 bg-gradient-to-br from-soft-blue-100 to-soft-blue-200 relative overflow-hidden">
+                <div class="h-48 sm:h-56 md:h-64 lg:h-72 bg-gradient-to-br from-soft-blue-100 to-soft-blue-200 relative overflow-hidden">
                     <img 
                         src="${item.image}" 
                         alt="${item.alt}"
@@ -208,13 +209,26 @@ class MentoringCarousel {
         if (this.autoplayInterval) {
             clearInterval(this.autoplayInterval);
         }
+        if (this.timerInterval) {
+            clearInterval(this.timerInterval);
+        }
         this.startAutoplay();
     }
 
     startTimer() {
+        // Clear existing timer
+        if (this.timerInterval) {
+            clearInterval(this.timerInterval);
+        }
+        
         let timeLeft = this.autoplayDelay / 1000;
         
-        const timerInterval = setInterval(() => {
+        // Update timer display immediately
+        if (this.elements.timerSpan) {
+            this.elements.timerSpan.textContent = timeLeft;
+        }
+        
+        this.timerInterval = setInterval(() => {
             if (!this.isAutoplayPaused && this.elements.timerSpan) {
                 timeLeft--;
                 this.elements.timerSpan.textContent = timeLeft;
@@ -293,6 +307,9 @@ class MentoringCarousel {
     destroy() {
         if (this.autoplayInterval) {
             clearInterval(this.autoplayInterval);
+        }
+        if (this.timerInterval) {
+            clearInterval(this.timerInterval);
         }
     }
 }

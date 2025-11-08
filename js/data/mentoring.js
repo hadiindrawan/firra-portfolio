@@ -32,7 +32,7 @@ const MENTORING_DATA = [
     },
     {
         id: 5,
-        image: './assets/mentor-firra-5.jpeg',
+        image: './assets/mentor-firra-7.jpeg',
         title: 'Professional Development Review',
         description: 'Comprehensive review session evaluating progress, celebrating achievements, and adjusting strategies for continued growth.',
         alt: 'Firra conducting professional development review session'

@@ -391,6 +391,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Services Data & Functionality
+    // Use centralized services data from global variable
+    const servicesData = window.SERVICES_DATA || [
+        // Fallback data if services.js fails to load
+        {
+            id: 1,
+            icon: 'fas fa-chalkboard-teacher',
+            title: 'Professional Training',
+            description: 'Comprehensive training programs designed to enhance professional skills.',
+            features: ['Leadership Development', 'Communication Skills', 'Team Building']
+        }
+    ];
+
+    // Services Rendering
+    function renderServices() {
+        const servicesContainer = document.getElementById('servicesContainer');
+        if (!servicesContainer || !servicesData.length) return;
+
+        const servicesHTML = servicesData.map(service => {
+            const featuresHTML = service.features.map(feature => `<li>• ${feature}</li>`).join('');
+            
+            return `
+                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-1" data-service-id="${service.id}">
+                    <div class="w-12 h-12 bg-soft-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="${service.icon} text-soft-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">${service.title}</h3>
+                    <p class="text-gray-600 mb-4">${service.description}</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        ${featuresHTML}
+                    </ul>
+                </div>
+            `;
+        }).join('');
+
+        servicesContainer.innerHTML = servicesHTML;
+    }
+
+    // Initialize services
+    renderServices();
+    
     // Speaking Events Data & Functionality
     // Use centralized events data from global variable
     const eventsData = window.SPEAKING_EVENTS_DATA || [

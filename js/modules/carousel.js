@@ -57,7 +57,7 @@ class MentoringCarousel {
 
         const slidesHTML = this.mentoringData.map((item, index) => `
             <div class="carousel-slide min-w-full relative">
-                <div class="aspect-video bg-gradient-to-br from-soft-blue-100 to-soft-blue-200 relative overflow-hidden">
+                <div class="h-96 bg-gradient-to-br from-soft-blue-100 to-soft-blue-200 relative overflow-hidden">
                     <img 
                         src="${item.image}" 
                         alt="${item.alt}"

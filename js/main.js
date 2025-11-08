@@ -5,6 +5,7 @@ import SpeakingEvents from './modules/events.js';
 import MentoringCarousel from './modules/carousel.js';
 import EnhancedImageModal from './modules/modal.js';
 import ImageOptimizer from './modules/imageOptimizer.js';
+import ServicesManager from './modules/services.js';
 
 // Portfolio Application Class
 class PortfolioApp {
@@ -28,6 +29,7 @@ class PortfolioApp {
             this.modules.core = new PortfolioCore();
             
             // Initialize other modules
+            this.modules.services = new ServicesManager();
             this.modules.events = new SpeakingEvents();
             this.modules.carousel = new MentoringCarousel();
             this.modules.modal = new EnhancedImageModal();

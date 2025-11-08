@@ -77,8 +77,8 @@
                 "@type": "Offer", 
                 "itemOffered": {
                     "@type": "Service",
-                    "name": "Career Counseling",
-                    "description": "One-on-one career guidance and strategic career development planning"
+                    "name": "1 on 1 Mentoring",
+                    "description": "Personalized one-on-one mentoring sessions for career guidance and strategic development planning"
                 }
             },
             {
@@ -387,90 +387,9 @@
                 <p class="mt-4 text-xl text-gray-600">Comprehensive solutions for your professional development needs</p>
             </div>
             
-            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-soft-blue-100 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-chalkboard-teacher text-soft-blue-600 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Professional Training</h3>
-                    <p class="text-gray-600 mb-4">Comprehensive training programs designed to enhance professional skills and competencies aligned with industry standards.</p>
-                    <ul class="text-sm text-gray-500 space-y-1">
-                        <li>• Leadership Development</li>
-                        <li>• Communication Skills</li>
-                        <li>• Team Building</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 2 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-soft-blue-100 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-compass text-soft-blue-600 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Career Counseling</h3>
-                    <p class="text-gray-600 mb-4">Personalized career guidance to help you navigate professional challenges and identify growth opportunities.</p>
-                    <ul class="text-sm text-gray-500 space-y-1">
-                        <li>• Career Path Planning</li>
-                        <li>• Skill Gap Analysis</li>
-                        <li>• Goal Setting & Strategy</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 3 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-soft-blue-100 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-users text-soft-blue-600 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">L&D Strategy</h3>
-                    <p class="text-gray-600 mb-4">Strategic learning and development solutions to build organizational capabilities and drive business results.</p>
-                    <ul class="text-sm text-gray-500 space-y-1">
-                        <li>• Learning Strategy Design</li>
-                        <li>• Capability Assessment</li>
-                        <li>• Performance Improvement</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 4 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-soft-blue-100 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-chart-line text-soft-blue-600 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Skills Development</h3>
-                    <p class="text-gray-600 mb-4">Targeted skill enhancement programs to meet current and future industry demands and technological changes.</p>
-                    <ul class="text-sm text-gray-500 space-y-1">
-                        <li>• Technical Skills Training</li>
-                        <li>• Soft Skills Enhancement</li>
-                        <li>• Digital Literacy</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 5 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-soft-blue-100 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-lightbulb text-soft-blue-600 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Workshop Facilitation</h3>
-                    <p class="text-gray-600 mb-4">Interactive workshops and seminars designed to engage participants and deliver practical, actionable insights.</p>
-                    <ul class="text-sm text-gray-500 space-y-1">
-                        <li>• Interactive Sessions</li>
-                        <li>• Team Workshops</li>
-                        <li>• Custom Programs</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 6 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-soft-blue-100 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-handshake text-soft-blue-600 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Consultation</h3>
-                    <p class="text-gray-600 mb-4">Strategic consultation services to help organizations build effective learning cultures and development frameworks.</p>
-                    <ul class="text-sm text-gray-500 space-y-1">
-                        <li>• Organizational Analysis</li>
-                        <li>• Strategic Planning</li>
-                        <li>• Implementation Support</li>
-                    </ul>
-                </div>
+            <!-- Services Container (populated by JavaScript) -->
+            <div id="servicesContainer" class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Services will be dynamically generated here -->
             </div>
         </div>
     </section>
@@ -613,7 +532,7 @@
             
             <div class="mt-16">
                 <!-- Carousel Container -->
-                <div class="relative max-w-5xl mx-auto">
+                <div class="relative max-w-3xl mx-auto">
                     <!-- Main Carousel -->
                     <div id="mentoringCarousel" class="relative overflow-hidden rounded-2xl shadow-2xl bg-gradient-to-br from-soft-blue-50 to-soft-blue-100">
                         <!-- Carousel Track -->
@@ -868,6 +787,7 @@
     <!-- Data Files (loaded first) -->
     <script src="./js/data/events.js"></script>
     <script src="./js/data/mentoring.js"></script>
+    <script src="./js/data/services.js"></script>
     
     <!-- JavaScript Modules -->
     <script type="module" src="./js/main.js"></script>

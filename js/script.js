@@ -433,8 +433,10 @@ document.addEventListener('DOMContentLoaded', function() {
     renderServices();
     
     // Speaking Events Data & Functionality
-    // Use centralized events data from global variable
-    const eventsData = window.SPEAKING_EVENTS_DATA || [
+    // Use centralized events data from global variable and sort by year (newest first)
+    const eventsData = (window.SPEAKING_EVENTS_DATA || []).sort((a, b) => {
+        return parseInt(b.year) - parseInt(a.year);
+    }) || [
         // Fallback data if events.js fails to load
         {
             id: 1,

@@ -5,8 +5,10 @@ class SpeakingEvents {
         this.showAllEvents = false;
         this.eventsToShow = 3; // Initial number of events to show
         
-        // Use centralized events data from global variable
-        this.eventsData = [...(window.SPEAKING_EVENTS_DATA || [])];
+        // Use centralized events data from global variable and sort by year (newest first)
+        this.eventsData = [...(window.SPEAKING_EVENTS_DATA || [])].sort((a, b) => {
+            return parseInt(b.year) - parseInt(a.year);
+        });
 
         this.init();
     }

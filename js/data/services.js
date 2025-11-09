@@ -8,9 +8,9 @@ const SERVICES_DATA = [
         title: 'Professional Training',
         description: 'Comprehensive training programs designed to enhance professional skills and competencies aligned with industry standards.',
         features: [
-            'Leadership Development',
-            'Communication Skills', 
-            'Team Building'
+            'Personal Growth',
+            'Communication Skills',
+            'Networking & Relationship',
         ]
     },
     {

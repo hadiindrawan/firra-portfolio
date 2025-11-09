@@ -32,10 +32,17 @@ const MENTORING_DATA = [
     },
     {
         id: 5,
-        image: './assets/mentor-firra-7.jpeg',
+        image: './assets/mentor-firra-5.jpeg',
         title: 'Professional Development Review',
         description: 'Comprehensive review session evaluating progress, celebrating achievements, and adjusting strategies for continued growth.',
         alt: 'Firra conducting professional development review session'
+    },
+    {
+        id: 6,
+        image: './assets/mentor-firra-6.jpeg',
+        title: 'Networking Strategies Session',
+        description: 'Focused mentoring on effective networking techniques, relationship building, and leveraging professional connections for career growth.',
+        alt: 'Firra advising mentee on networking strategies'
     }
 ];
 

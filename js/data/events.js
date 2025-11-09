@@ -56,7 +56,24 @@ const SPEAKING_EVENTS_DATA = [
         },
         tags: ['Team Synergy', 'Communication', 'Collaboration', 'Team Engagement']
     },
-    // Add more events as needed
+    {
+        id: 4,
+        image: './assets/web-firra-4.jpeg',
+        title: 'CV and Interview Preparation Workshop',
+        description: 'Conducted a hands-on workshop focused on crafting effective CVs and mastering interview techniques to enhance job seekers\' chances of success.',
+        date: 'Saturday, March 15, 2024',
+        organizer: 'braincore.id',
+        role: 'Speaker',
+        roleIcon: 'fas fa-microphone',
+        year: '2024',
+        themeColors: {
+            gradient: 'from-yellow-100 to-yellow-200',
+            badge: 'bg-yellow-600',
+            role: 'text-yellow-600',
+            tags: 'bg-yellow-100 text-yellow-700'
+        },
+        tags: ['CV Writing', 'Interview Skills', 'Job Search']
+    }
 ];
 
 // Global variable for scripts

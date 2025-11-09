@@ -433,9 +433,11 @@ document.addEventListener('DOMContentLoaded', function() {
     renderServices();
     
     // Speaking Events Data & Functionality
-    // Use centralized events data from global variable and sort by year (newest first)
+    // Use centralized events data from global variable and sort by date (newest first)
     const eventsData = (window.SPEAKING_EVENTS_DATA || []).sort((a, b) => {
-        return parseInt(b.year) - parseInt(a.year);
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        return dateB - dateA;
     }) || [
         // Fallback data if events.js fails to load
         {

@@ -5,9 +5,11 @@ class SpeakingEvents {
         this.showAllEvents = false;
         this.eventsToShow = 3; // Initial number of events to show
         
-        // Use centralized events data from global variable and sort by year (newest first)
+        // Use centralized events data from global variable and sort by date (newest first)
         this.eventsData = [...(window.SPEAKING_EVENTS_DATA || [])].sort((a, b) => {
-            return parseInt(b.year) - parseInt(a.year);
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+            return dateB - dateA;
         });
 
         this.init();

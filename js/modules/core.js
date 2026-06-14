@@ -120,17 +120,28 @@ class PortfolioCore {
 
         window.addEventListener('scroll', this.throttle(updateNavbar, 50));
         
-        // Parallax effect for hero section
+        // Enhanced parallax effect for hero section
+        const heroSection = document.querySelector('#home');
+        let heroParallaxElements = [];
+        if (heroSection) {
+            // Get decorative background circles
+            heroParallaxElements = heroSection.querySelectorAll('.absolute.w-32, .absolute.w-24');
+        }
+        
         const parallaxEffect = () => {
             const scrolled = window.pageYOffset;
-            const heroSection = document.querySelector('#home');
-            const parallaxElements = heroSection?.querySelectorAll('.relative:not(.profile-photo-container)');
             
-            if (parallaxElements) {
-                parallaxElements.forEach(el => {
-                    const speed = 0.1;
-                    el.style.transform = `translateY(${scrolled * speed}px)`;
-                });
+            // Parallax decorative elements
+            heroParallaxElements.forEach((el, index) => {
+                const speed = index === 0 ? 0.15 : 0.08;
+                el.style.transform = `translate3d(0, ${scrolled * speed}px, 0)`;
+            });
+            
+            // Subtle parallax on hero content
+            const heroContent = heroSection?.querySelector('.lg\\:col-span-7');
+            if (heroContent && scrolled < window.innerHeight) {
+                heroContent.style.transform = `translate3d(0, ${scrolled * 0.04}px, 0)`;
+                heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.3;
             }
         };
 
@@ -138,30 +149,164 @@ class PortfolioCore {
     }
 
     initAnimations() {
-        // Intersection Observer for animations
+        // Section scroll reveal
+        this.initScrollReveal();
+        
+        // Animated counters for "By the Numbers"
+        this.initAnimatedCounters();
+
+        // Card hover effects
+        this.initCardHoverEffects();
+        
+        // Mouse-tracking tilt on cards
+        this.initTiltEffect();
+        
+        // Mouse parallax in hero
+        this.initHeroMouseParallax();
+    }
+
+    initScrollReveal() {
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -60px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in-up');
-                    entry.target.style.opacity = '1';
+                    // Add visible class with a small stagger if the element has a stagger class
+                    const delay = entry.target.dataset.staggerDelay || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('section-visible');
+                    }, delay);
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        // Observe elements for animation
-        const animateElements = document.querySelectorAll('.card-hover, .timeline-item, .skill-item');
-        animateElements.forEach(el => {
-            el.style.opacity = '0';
+        // Observe section wrappers for scroll reveal
+        const revealElements = document.querySelectorAll('.reveal, .section-hidden');
+        revealElements.forEach(el => {
             observer.observe(el);
         });
+        
+        // Also observe section tags themselves
+        document.querySelectorAll('section').forEach(section => {
+            // Mark first section as already visible
+            if (section.id === 'home') return;
+            
+            const wrapper = section.querySelector('.max-w-7xl > .text-center, .max-w-7xl > div:not(.text-center)');
+            if (wrapper && !wrapper.classList.contains('section-hidden')) {
+                wrapper.classList.add('section-hidden');
+                observer.observe(wrapper);
+            }
+        });
+    }
 
-        // Card hover effects
-        this.initCardHoverEffects();
+    initAnimatedCounters() {
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.dataset.target, 10);
+                    const suffix = counter.dataset.suffix || '';
+                    const prefix = counter.dataset.prefix || '';
+                    const duration = parseInt(counter.dataset.duration, 10) || 2000;
+                    
+                    if (isNaN(target)) {
+                        counterObserver.unobserve(counter);
+                        return;
+                    }
+                    
+                    this.animateCounter(counter, target, prefix, suffix, duration);
+                    counterObserver.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.stat-counter').forEach(el => {
+            counterObserver.observe(el);
+        });
+    }
+
+    animateCounter(element, target, prefix, suffix, duration) {
+        const startTime = performance.now();
+        const isFloat = target % 1 !== 0;
+        
+        const update = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Ease out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = eased * target;
+            
+            if (isFloat) {
+                element.textContent = prefix + current.toFixed(1) + suffix;
+            } else {
+                element.textContent = prefix + Math.floor(current) + suffix;
+            }
+            
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                element.textContent = prefix + target + suffix;
+                // Add glow pulse after counting finishes
+                element.classList.add('animate-glow-pulse');
+            }
+        };
+        
+        requestAnimationFrame(update);
+    }
+
+    initTiltEffect() {
+        const tiltCards = document.querySelectorAll('.tilt-card');
+        
+        tiltCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / centerY * -8;
+                const rotateY = (x - centerX) / centerX * 8;
+                
+                card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            });
+        });
+    }
+
+    initHeroMouseParallax() {
+        const heroSection = document.querySelector('#home');
+        if (!heroSection) return;
+        
+        const decorativeCircles = heroSection.querySelectorAll('.absolute.w-32, .absolute.w-24');
+        if (decorativeCircles.length === 0) return;
+        
+        heroSection.addEventListener('mousemove', (e) => {
+            const rect = heroSection.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            
+            decorativeCircles.forEach((circle, index) => {
+                const speed = index === 0 ? 20 : 12;
+                const moveX = x * speed;
+                const moveY = y * speed;
+                circle.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+        
+        heroSection.addEventListener('mouseleave', () => {
+            decorativeCircles.forEach(circle => {
+                circle.style.transform = 'translate(0, 0)';
+            });
+        });
     }
 
     initCardHoverEffects() {

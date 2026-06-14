@@ -28,7 +28,7 @@ class ServicesManager {
         ).join('');
         
         return `
-            <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-1" data-service-id="${service.id}">
+            <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-1 tilt-card" data-service-id="${service.id}">
                 <div class="w-12 h-12 bg-soft-blue-100 rounded-lg flex items-center justify-center mb-4">
                     <i class="${service.icon} text-soft-blue-600 text-xl"></i>
                 </div>
